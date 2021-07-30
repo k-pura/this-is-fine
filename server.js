@@ -23,7 +23,8 @@ app.listen(port, function() {
 app.use(express.static(path.join(__dirname, 'build')));
 
 // Put API routes here, before the "catch all" route
-app.use('/api', require('./routes/api/posts'))
+app.use('/api', require('./routes/api/thoughts'))
+
 
 
 // The following "catch all" route (note the *) is necessary

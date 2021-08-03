@@ -13,8 +13,6 @@ export default class Nav extends Component {
       <header className="App-header">
         "THIS IS FINE"
         <nav>
-          <Link exact to='/'>HOME</Link>
-          &nbsp;&nbsp;&nbsp;
           <Link exact to='/about'>ABOUT</Link>
           &nbsp;&nbsp;&nbsp;
           <Link exact to='/mythoughts'>MY THOUGHTS</Link>
@@ -22,6 +20,8 @@ export default class Nav extends Component {
           <Link exact to='/newthought'>NEW THOUGHT</Link>
           &nbsp;&nbsp;&nbsp;
           <Link exact to='/resources'>RESOURCES</Link>
+          &nbsp;&nbsp;&nbsp;
+          <Link exact to='/logout'>LOGOUT</Link>
         </nav>
       </header>
       <main>

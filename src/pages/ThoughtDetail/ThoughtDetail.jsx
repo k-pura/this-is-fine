@@ -6,17 +6,22 @@ export default class ThoughtDetail extends Component {
     oneThought: [],
   } 
 
-  getOne = async (incoming_thought_id) => {
-    let fetchThoughtDataResponse = await fetch('/api/thoughts/:id')
-    if (!fetchThoughtDataResponse.ok) throw new Error("Couldn't fetch your thought!")
-    let oneThoughtData = await fetchThoughtDataResponse.json() // <------- convert fetch response into a js object
-    console.log("get thought", oneThoughtData)
-    this.setState({oneThought: oneThoughtData});
-  };
+//   getOne = async (incoming_thought_id) => {
+//     let fetchThoughtDataResponse = await fetch('/api/thoughts/:id')
+//     if (!fetchThoughtDataResponse.ok) throw new Error("Couldn't fetch your thought!")
+//     let oneThoughtData = await fetchThoughtDataResponse.json() // <------- convert fetch response into a js object
+//     console.log("get thought", oneThoughtData)
+//     this.setState({oneThought: oneThoughtData});
+//   };
 
   async componentDidMount() {
+    console.log("LOOK HERE", this.props.match.params.id)
     try {
-     await this.getOne();
+        let fetchThoughtDataResponse = await fetch('/api/thoughts/:id')
+        if (!fetchThoughtDataResponse.ok) throw new Error("Couldn't fetch your thought!")
+        let oneThoughtData = await fetchThoughtDataResponse.json() // <------- convert fetch response into a js object
+        console.log("get thought", oneThoughtData)
+        this.setState({oneThought: oneThoughtData});    
     } catch (err) {
       console.error('ERROR:', err) // <-- log if error
     }

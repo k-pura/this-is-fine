@@ -4,6 +4,10 @@ import React from 'react';
 import AuthPage from '../AuthPage/AuthPage';
 import Nav from '../../components/Nav/Nav.jsx';
 import { Link, Route, Switch} from 'react-router-dom';
+import MyThoughts from '../../pages/MyThoughts/MyThoughts';
+import NewThought from '../../pages/NewThought/NewThought';
+import Resources from '../../pages/Resources/Resources';
+import ThoughtDetail from '../ThoughtDetail/ThoughtDetail';
 
 export default class App extends Component {
   state = {
@@ -34,6 +38,27 @@ export default class App extends Component {
     return (
       <div className="App">
         <Nav />
+      <main>
+        <Switch>
+          <Route>
+            {
+
+            }
+          <Route path="/thoughts/:id" render={props =>
+            <ThoughtDetail {...props}/>
+          } />
+          <Route path='/mythoughts' render={() =>
+            <MyThoughts />
+          } />
+          <Route path='/newthought' render={() =>
+            <NewThought />
+          } />
+          <Route path='/resources' render={() =>
+            <Resources />
+          } />
+          </Route>
+      </Switch>
+      </main>
         { this.state.user ? 
           <p>
             Logged In

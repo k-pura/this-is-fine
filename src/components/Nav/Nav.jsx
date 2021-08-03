@@ -1,5 +1,5 @@
 import './Nav.css';
-import {Link, Route, Switch, Redirect} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
 import React, { Component } from 'react';
 // import About from '../../pages/
 import MyThoughts from '../../pages/MyThoughts/MyThoughts';
@@ -9,10 +9,8 @@ import Resources from '../../pages/Resources/Resources';
 export default class Nav extends Component {
     render() {
         return (
-    <div className="App">
-      <header className="App-header">
-        "THIS IS FINE"
-        <nav>
+  <nav className="Nav">
+            <div className="nav-container">
           <Link exact to='/about'>ABOUT</Link>
           &nbsp;&nbsp;&nbsp;
           <Link exact to='/mythoughts'>MY THOUGHTS</Link>
@@ -26,6 +24,7 @@ export default class Nav extends Component {
       </header>
       <main>
         <Switch>
+            <Route>
         {/* <Route exact path='/about' render={() =>
         
         } /> */}
@@ -38,9 +37,10 @@ export default class Nav extends Component {
       <Route exact path='/resources' render={() =>
           <Resources />
       } />
+      </Route>
       </Switch>
-      </main>
-    </div>
+      </div>
+      </nav>
       )
     }
 }

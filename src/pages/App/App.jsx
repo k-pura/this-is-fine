@@ -32,7 +32,7 @@ export default class App extends Component {
   
   render() {
     return (
-      <main className="App">
+      <div className="App">
         <Nav />
         { this.state.user ? 
           <p>
@@ -40,7 +40,7 @@ export default class App extends Component {
           </p> :
          <AuthPage setUserInState={this.setUserInState}/>
         }  
-      </main>
+      </div>
     )
   }
 }

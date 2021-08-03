@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { Route, Switch, Redirect, Link } from 'react-router-dom';
 import React from 'react';
 import NewThoughtRecordForm from '../../components/NewThoughtRecordForm/NewThoughtRecordForm';
+import MyThoughts from '../MyThoughts/MyThoughts';
 import AuthPage from '../AuthPage/AuthPage';
 
 export default class App extends Component {
@@ -35,7 +36,8 @@ export default class App extends Component {
       <main className="App">
         { this.state.user ? 
           <p1>
-            <NewThoughtRecordForm/>
+            <NewThoughtRecordForm />
+            <MyThoughts />
           </p1> :
          <AuthPage setUserInState={this.setUserInState}/>
         }  

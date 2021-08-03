@@ -12,8 +12,9 @@ const thoughtRecordSchema = new Schema ({
     evidenceAgainst: {type: String, required: true},
     balanceThought: {type: String, required: true},
     feelNow: {type: String, required: true}, 
-
-
+    user: { type: Schema.Types.ObjectId, ref: 'User' },
+}, {
+  timestamps: true,
 });
 
 module.exports = mongoose.model("ThoughtRecord", thoughtRecordSchema);

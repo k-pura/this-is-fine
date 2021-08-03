@@ -1,10 +1,9 @@
 import './App.css';
 import { Component } from 'react';
-import { Route, Switch, Redirect, Link } from 'react-router-dom';
 import React from 'react';
-import NewThoughtRecordForm from '../../components/NewThoughtRecordForm/NewThoughtRecordForm';
-import MyThoughts from '../MyThoughts/MyThoughts';
 import AuthPage from '../AuthPage/AuthPage';
+import Nav from '../../components/Nav/Nav.jsx';
+import { Link, Route, Switch} from 'react-router-dom';
 
 export default class App extends Component {
   state = {
@@ -33,15 +32,15 @@ export default class App extends Component {
   
   render() {
     return (
-      <main className="App">
+      <div className="App">
+        <Nav />
         { this.state.user ? 
-          <p1>
-            <NewThoughtRecordForm />
-            <MyThoughts />
-          </p1> :
+          <p>
+            Logged In
+          </p> :
          <AuthPage setUserInState={this.setUserInState}/>
         }  
-      </main>
+      </div>
     )
   }
 }

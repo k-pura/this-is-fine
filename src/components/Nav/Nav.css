@@ -1,0 +1,28 @@
+.Nav {
+    background-color: #65524d;
+    padding: 1em;
+    position: relative;
+    margin: 0 auto;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+}
+
+.link {
+    
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+}
+
+.link:hover {
+    color: orange;
+}
+
+.link a:hover {
+    color: orange;
+    transition: 0.5s;
+}

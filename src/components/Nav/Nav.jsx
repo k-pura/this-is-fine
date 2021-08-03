@@ -9,7 +9,8 @@ import Resources from '../../pages/Resources/Resources';
 export default class Nav extends Component {
     render() {
         return (
-  <nav className="Nav">
+        <div>
+          <nav className="Nav">
             <div className="nav-container">
           <Link exact to='/about'>ABOUT</Link>
           &nbsp;&nbsp;&nbsp;
@@ -20,9 +21,9 @@ export default class Nav extends Component {
           <Link exact to='/resources'>RESOURCES</Link>
           &nbsp;&nbsp;&nbsp;
           <Link exact to='/logout'>LOGOUT</Link>
-        </nav>
-      </header>
-      <main>
+            </div>
+          </nav>
+        <main>
         <Switch>
             <Route>
         {/* <Route exact path='/about' render={() =>
@@ -39,8 +40,8 @@ export default class Nav extends Component {
       } />
       </Route>
       </Switch>
+      </main>
       </div>
-      </nav>
       )
     }
 }

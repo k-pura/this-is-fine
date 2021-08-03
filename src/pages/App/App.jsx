@@ -1,6 +1,6 @@
 import './App.css';
 import { Component } from 'react';
-import { Route, Switch, Redirect, Link } from 'react-router-dom';
+// import { Route, Switch, Redirect, Link } from 'react-router-dom';
 import React from 'react';
 import AuthPage from '../AuthPage/AuthPage';
 import Nav from '../../components/Nav/Nav.jsx';
@@ -32,7 +32,7 @@ export default class App extends Component {
   
   render() {
     return (
-      <main className="App">
+      <div className="App">
         <Nav />
         { this.state.user ? 
           <p1>
@@ -40,7 +40,7 @@ export default class App extends Component {
           </p1> :
          <AuthPage setUserInState={this.setUserInState}/>
         }  
-      </main>
+      </div>
     )
   }
 }

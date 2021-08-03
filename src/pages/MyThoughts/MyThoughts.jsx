@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import React from 'react';
+
 export default class MyThoughts extends Component {
   state = {
     thoughts: [],

@@ -1,9 +1,9 @@
 import './App.css';
 import { Component } from 'react';
-// import { Route, Switch, Redirect, Link } from 'react-router-dom';
 import React from 'react';
 import AuthPage from '../AuthPage/AuthPage';
 import Nav from '../../components/Nav/Nav.jsx';
+import { Link, Route, Switch} from 'react-router-dom';
 
 export default class App extends Component {
   state = {
@@ -35,9 +35,9 @@ export default class App extends Component {
       <div className="App">
         <Nav />
         { this.state.user ? 
-          <p1>
+          <p>
             Logged In
-          </p1> :
+          </p> :
          <AuthPage setUserInState={this.setUserInState}/>
         }  
       </div>

@@ -9,17 +9,20 @@ import Resources from '../../pages/Resources/Resources';
 export default class Nav extends Component {
     render() {
         return (
-        <nav className="Nav">
+  <nav className="Nav">
             <div className="nav-container">
-            <Link className="link" to='/'>HOME</Link>
-             &nbsp;&nbsp;&nbsp;
-            <Link className="link" to='/about'>ABOUT</Link>
-            &nbsp;&nbsp;&nbsp;
-            <Link className="link" to='/mythoughts'>MY THOUGHTS</Link>
-            &nbsp;&nbsp;&nbsp;
-            <Link className="link" to='/newthought'>NEW THOUGHT</Link>
-            &nbsp;&nbsp;&nbsp;
-            <Link className="link" to='/resources'>RESOURCES</Link>
+          <Link exact to='/about'>ABOUT</Link>
+          &nbsp;&nbsp;&nbsp;
+          <Link exact to='/mythoughts'>MY THOUGHTS</Link>
+          &nbsp;&nbsp;&nbsp;
+          <Link exact to='/newthought'>NEW THOUGHT</Link>
+          &nbsp;&nbsp;&nbsp;
+          <Link exact to='/resources'>RESOURCES</Link>
+          &nbsp;&nbsp;&nbsp;
+          <Link exact to='/logout'>LOGOUT</Link>
+        </nav>
+      </header>
+      <main>
         <Switch>
             <Route>
         {/* <Route exact path='/about' render={() =>

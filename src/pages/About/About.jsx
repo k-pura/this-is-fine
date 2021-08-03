@@ -3,13 +3,13 @@ import Nav from '../../components/Nav/Nav.jsx'
 
 
 
-function Thoughts() {
+function About() {
   return (
-    <div className="Thoughts">
+    <div className="About">
         <Nav />
-      <h1>THE THOUGHT PAGE</h1>
+      <h1>THE ABOUT PAGE</h1>
     </div>
   );
 }
 
-export default Thoughts;
+export default About;

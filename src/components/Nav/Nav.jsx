@@ -1,5 +1,5 @@
 import './Nav.css';
-import {Link, Route, Switch} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import React, { Component } from 'react';
 import UserLogOut from '../UserLogOut/UserLogOut';
 import AuthPage from '../../pages/AuthPage/AuthPage';
@@ -44,6 +44,7 @@ export default class Nav extends React.Component {
           isLoggedIn: true,
         })      
       }
+
     }
   }
 

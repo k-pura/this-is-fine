@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './MyThoughts.css';
 
 export default class MyThoughts extends Component {
   state = {
@@ -25,15 +26,17 @@ export default class MyThoughts extends Component {
   };
   render() {
     return (
-      <div className="myThoughts">
+     <div className="my-thought">
         <h1>All of my thoughts</h1>
+
     {this.state.thoughts.map(t => <h1>
 
     <Link to={`/thoughts/${t._id}`} activeClassName="current">{t.entryName} <br/> {t.emoji}</Link>
 
       </h1>
     )}
-       </div>
+    </div>
+    </div>
     )
   }
 }

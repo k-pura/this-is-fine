@@ -12,17 +12,16 @@
     border-bottom: 1px solid lightgray;
 }
 
-.link {
-    
+#link {
     cursor: pointer;
     border-bottom: 3px solid transparent;
 }
 
-.link:hover {
+#link:hover {
     color: orange;
 }
 
-.link a:hover {
+#link a:hover {
     color: orange;
     transition: 0.5s;
 }

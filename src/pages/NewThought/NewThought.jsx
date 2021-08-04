@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import './NewThought.css'
 
 export default class NewThoughtRecordForm extends Component {
 
@@ -70,16 +71,17 @@ export default class NewThoughtRecordForm extends Component {
     }
 
     render () {
-
         return (
-
-            <div className="form">
+            <div class="thought">
                 <h1>New Thought Record</h1>
-
-                    <form>
-
+                        <div class="thought-container">
+                            <div class="thought-contents">
+                    <form class="thought-form">
                         <span>Name this entry:</span>
-                        <input name="entryName" value={this.state.entryName} onChange={this.handleChange}/>
+                        <div class="textbox-title">
+                        <textarea name="entryName" value={this.state.entryName} onChange={this.handleChange}/>
+                        </div>
+                        <br />
 
                         <span>What emoji resonantes with you right now?</span>
                         <select name="emoji" value={this.state.emoji} onChange={this.handleChange}>
@@ -105,31 +107,51 @@ export default class NewThoughtRecordForm extends Component {
                         </select>
 
                         <span>What was the situation?</span>
-                        <input name="situation" value={this.state.situation} onChange={this.handleChange}/>
-
+                        <div class="textbox">
+                        <textarea name="situation" value={this.state.situation} onChange={this.handleChange}/>
+                        </div>
+                        <br />
                         <span>Describe your emotions or feelings:</span>
-                        <input name="emotion" value={this.state.emotion} onChange={this.handleChange} />
-
+                        <div class="textbox">
+                        <textarea name="emotion" value={this.state.emotion} onChange={this.handleChange} />
+                        </div>
+                        <br />
                         <span>Automatic thoughts:</span>
-                        <input name="automaticThoughts" value={this.state.automaticThoughts} onChange={this.handleChange}/>
-
+                        <div class="textbox">
+                        <textarea name="automaticThoughts" value={this.state.automaticThoughts} onChange={this.handleChange}/>
+                        </div>
+                        <br />
                         <span>Evidence supporting those thoughts:</span>
-                        <input name="evidenceSupport" value={this.state.evidenceSupport} onChange={this.handleChange} />
-
+                        <div class="textbox">
+                        <textarea name="evidenceSupport" value={this.state.evidenceSupport} onChange={this.handleChange} />
+                        </div>
+                        <br />
                         <span>Evidence against those thoughts:</span>
-                        <input name="evidenceAgainst" value={this.state.evidenceAgainst} onChange={this.handleChange} />
-
+                        <div class="textbox">
+                        <textarea name="evidenceAgainst" value={this.state.evidenceAgainst} onChange={this.handleChange} />
+                        </div>
+                        <br />
                         <span>New balanced thought:</span>
-                        <input name="balanceThought" value={this.state.balanceThought} onChange={this.handleChange}/>
-
+                        <div class="textbox">
+                        <textarea name="balanceThought" value={this.state.balanceThought} onChange={this.handleChange}/>
+                        </div>
+                        <br />
                         <span>How do you feel now?</span>
-                        <input name="feelNow" value={this.state.feelNow} onChange={this.handleChange}/>
-
+                        <div class="text">
+                        <textarea name="feelNow" value={this.state.feelNow} onChange={this.handleChange}/>
+                        </div>
+                        
+                        <br />
+                        <br />
+                        
                         <button onClick={this.handleSubmit}>Save this record</button>
+                   
                     </form>
+         </div>
+</div>
+                        </div>
 
-
-            </div>
+            
 
 
         )

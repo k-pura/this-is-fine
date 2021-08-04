@@ -1,3 +1,5 @@
-.App {
-    background-color: #817e9f;
-}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }

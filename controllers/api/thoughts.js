@@ -3,7 +3,8 @@ const Thought = require('../../models/Thought');
 module.exports = {
     create,
     index,
-    showOne
+    showOne,
+    deleteOne,
 }
 
 async function showOne(req,res) {
@@ -36,4 +37,16 @@ async function create(req, res) {
       res.json(err);
     }
 }
+
+async function deleteOne(req, res) {
+    try {
+      let incomingId = req.params.id;
+      console.log("HERE IS THE INCOMING ID FROM THE REQ PARAMS", incomingId)
+      await Thought.findByIdAndRemove(incomingId)
+      console.log("YALL WE DID THE DELETE WE GOOD")
+      res.status(200).json('yes, deleted.')
+    } catch (err) {
+      res.status(500).json(err);
+    }
+} 
 

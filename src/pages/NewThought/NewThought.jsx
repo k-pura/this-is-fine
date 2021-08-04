@@ -32,10 +32,18 @@ export default class NewThoughtRecordForm extends Component {
             balanceThought: this.state.balanceThought,
             feelNow: this.state.feelNow,
         }
+
+// I need to define this jwt inside the options somehow so that I can put line 44 to work
+// i need to do this to protect a users entries to themselves only
+
+        let jwt = localStorage.getItem('token')
+
         let options = {
+            
             method: "POST",
             headers: {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
+              'Authorization' : 'Bearer ' + jwt,
             },
             body: JSON.stringify(body)
         };

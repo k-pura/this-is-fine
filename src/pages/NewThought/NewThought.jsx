@@ -82,7 +82,27 @@ export default class NewThoughtRecordForm extends Component {
                         <input name="entryName" value={this.state.entryName} onChange={this.handleChange}/>
 
                         <span>What emoji resonantes with you right now?</span>
-                        <input name="emoji" value={this.state.emoji} onChange={this.handleChange}/>
+                        <select name="emoji" value={this.state.emoji} onChange={this.handleChange}>
+                        <option>🙂</option>
+                        <option>🤪</option>
+                        <option>😔</option>
+                        <option>🤬</option>
+                        <option>🙄</option>
+                        <option>😧</option>
+                        <option>🤭</option>
+                        <option>🤯</option>
+                        <option>😤</option>
+                        <option>😢</option>
+                        <option>😳</option>
+                        <option>🙄</option>
+                        <option>😬</option>
+                        <option>💩</option>
+                        <option>😍</option>
+                        <option>😒</option>
+                        <option>😭</option>
+                        <option>🤣</option>
+
+                        </select>
 
                         <span>What was the situation?</span>
                         <input name="situation" value={this.state.situation} onChange={this.handleChange}/>

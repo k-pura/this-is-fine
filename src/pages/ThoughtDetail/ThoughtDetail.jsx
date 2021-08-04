@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import React from 'react';
-
+import history from '../../history';
 
 export default class ThoughtDetail extends Component {
   state = {
@@ -44,6 +44,7 @@ export default class ThoughtDetail extends Component {
         let deleteData =  await fetchResponse.json() 
         console.log("GET DELETE", deleteData)
         if (!fetchResponse.ok) throw new Error("Couldn't do the delete thing!")
+        this.props.history.push('/mythoughts');
         
     } catch (err) {
         console.error('ERROR:', err) 

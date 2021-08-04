@@ -10,9 +10,10 @@ async function showOne(req,res) {
   try {
     console.log('Im getting one thought')
     let oneThought = await Thought.findById(req.params.id)
-    res.status(200).json(thoughts)
-  } catch(err) {
+    res.status(200).json(oneThought)
+  } catch(err) {  
     res.status(500).json(err)
+    console.log(err)
   }
 }
 

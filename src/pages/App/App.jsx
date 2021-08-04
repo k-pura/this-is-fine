@@ -8,6 +8,8 @@ import MyThoughts from '../../pages/MyThoughts/MyThoughts';
 import NewThought from '../../pages/NewThought/NewThought';
 import Resources from '../../pages/Resources/Resources';
 import ThoughtDetail from '../ThoughtDetail/ThoughtDetail';
+import About from '../About/About';
+import UserLogOut from '../../components/UserLogOut/UserLogOut';
 
 export default class App extends Component {
   state = {
@@ -37,34 +39,37 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Nav />
-      <main>
+        <main>
+        { this.state.user ? 
+          <div>
+          <Nav />
+            Logged In
+          </div> :
+         <AuthPage setUserInState={this.setUserInState}/>
+        }  
         <Switch>
           <Route>
-            {
-
-            }
-          <Route path="/thoughts/:id" render={props =>
-            <ThoughtDetail {...props}/>
-          } />
-          <Route path='/mythoughts' render={() =>
-            <MyThoughts />
-          } />
-          <Route path='/newthought' render={() =>
-            <NewThought />
-          } />
-          <Route path='/resources' render={() =>
-            <Resources />
-          } />
+            <Route path="/thoughts/:id" render={props =>
+              <ThoughtDetail {...props}/>
+            } />
+            <Route path='/about' render={props =>
+              <About {...props}/>
+            } />
+            <Route path='/mythoughts' render={props =>
+              <MyThoughts {...props}/>
+            } />
+            <Route path='/newthought' render={props =>
+              <NewThought {...props}/>
+            } />
+            <Route path='/resources' render={props =>
+              <Resources {...props}/>
+            } />
+            <Route path='/logout' render={props =>
+              <UserLogOut {...props}/>
+            } />
           </Route>
       </Switch>
       </main>
-        { this.state.user ? 
-          <p>
-            Logged In
-          </p> :
-         <AuthPage setUserInState={this.setUserInState}/>
-        }  
       </div>
     )
   }

@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import React from 'react';
-import history from '../../history';
 
 export default class ThoughtDetail extends Component {
   state = {
@@ -18,9 +17,9 @@ export default class ThoughtDetail extends Component {
   async componentDidMount() {
     console.log("LOOK HERE", this.props.match.params.id)
     let id = this.props.match.params.id
-    console.log()
+    console.log(id)
     try {
-        let fetchThoughtDataResponse = await fetch(`/api/thoughts/${id}`)
+        let fetchThoughtDataResponse = await fetch(`/api/thoughts/detail/${id}`)
         if (!fetchThoughtDataResponse.ok) throw new Error("Couldn't fetch your thought!")
         let oneThoughtData = await fetchThoughtDataResponse.json() // <------- convert fetch response into a js object
         console.log("get thought", oneThoughtData)
@@ -36,7 +35,7 @@ export default class ThoughtDetail extends Component {
         console.log("LOOK HERE FOR DELETE STUFF", this.props.match.params.id)
         let jwt = localStorage.getItem('token')
         console.log(jwt)
-        let fetchResponse = await fetch((`/api/thoughts/${id}`), {
+        let fetchResponse = await fetch((`/api/thoughts/detail/${id}`), {
             method: "DELETE",
             headers: {"Content-Type": "application/json" ,'Authorization': 'Bearer ' + jwt}, 
         })  

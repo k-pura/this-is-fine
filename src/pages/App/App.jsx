@@ -53,10 +53,10 @@ export default class App extends Component {
               <About {...props}/>
             } />
             <Route path='/mythoughts' render={props =>
-              <MyThoughts {...props}/>
+              <MyThoughts user={this.state.user} {...props}/>
             } />
             <Route path='/newthought' render={props =>
-              <NewThought {...props}/>
+              <NewThought user={this.state.user} {...props}/>
             } />
             <Route path='/resources' render={props =>
               <Resources {...props}/>

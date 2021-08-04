@@ -9,7 +9,7 @@ export default class MyThoughts extends Component {
   }  
   getThoughts = async () => {
     let jwt = localStorage.getItem('token')
-    let fetchThoughtDataResponse = await fetch('/api/thoughts/', {headers: {'Authorization': 'Bearer ' + jwt}})
+    let fetchThoughtDataResponse = await fetch('/api/thoughts/' + this.props.user._id, {headers: {'Authorization': 'Bearer ' + jwt}})
     if (!fetchThoughtDataResponse.ok) throw new Error("Couldn't fetch thoughts!")
     let thoughtsData = await fetchThoughtDataResponse.json() // <------- convert fetch response into a js object
     console.log("get thoughts", thoughtsData)
@@ -35,7 +35,6 @@ export default class MyThoughts extends Component {
     <Link to={`/thoughts/${t._id}`} activeClassName="current">{t.entryName} <br/> {t.emoji}</Link>
 </div>
       </div>
-      </h1>
     )}
     </div>
     </div>

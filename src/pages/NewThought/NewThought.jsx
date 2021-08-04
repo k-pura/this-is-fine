@@ -32,6 +32,7 @@ export default class NewThoughtRecordForm extends Component {
             evidenceAgainst: this.state.evidenceAgainst,
             balanceThought: this.state.balanceThought,
             feelNow: this.state.feelNow,
+            user: this.props.user._id,
         }
 
 // I need to define this jwt inside the options somehow so that I can put line 44 to work

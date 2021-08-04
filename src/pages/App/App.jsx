@@ -39,7 +39,6 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <main>
         { this.state.user ? 
           <div>
           <Nav />
@@ -69,7 +68,6 @@ export default class App extends Component {
             } />
           </Route>
       </Switch>
-      </main>
       </div>
     )
   }

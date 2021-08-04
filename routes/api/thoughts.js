@@ -6,14 +6,14 @@ const thoughtsCtrl = require('../../controllers/api/thoughts');
 //POST a new thought record 
 router.post('/submitThoughtRecord', thoughtsCtrl.create)
 
-//SHOW all thoughts
-router.get('/thoughts', thoughtsCtrl.index)
-
 //Show one thought
-router.get('/thoughts/:id', thoughtsCtrl.showOne)
+router.get('/thoughts/detail/:id', thoughtsCtrl.showOne)
+
+//SHOW all thoughts
+router.get('/thoughts/:userId', thoughtsCtrl.index)
 
 //Delete one thought
-router.delete('/thoughts/:id', thoughtsCtrl.deleteOne)
+router.delete('/thoughts/detail/:id', thoughtsCtrl.deleteOne)
 
 
 

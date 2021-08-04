@@ -33,10 +33,18 @@ export default class NewThoughtRecordForm extends Component {
             balanceThought: this.state.balanceThought,
             feelNow: this.state.feelNow,
         }
+
+// I need to define this jwt inside the options somehow so that I can put line 44 to work
+// i need to do this to protect a users entries to themselves only
+
+        let jwt = localStorage.getItem('token')
+
         let options = {
+            
             method: "POST",
             headers: {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
+              'Authorization' : 'Bearer ' + jwt,
             },
             body: JSON.stringify(body)
         };
@@ -76,10 +84,28 @@ export default class NewThoughtRecordForm extends Component {
                         <br />
 
                         <span>What emoji resonantes with you right now?</span>
-                        <div class="textbox">
-                        <textarea name="emoji" value={this.state.emoji} onChange={this.handleChange}/>
-                        </div>
-                        <br />
+                        <select name="emoji" value={this.state.emoji} onChange={this.handleChange}>
+                        <option>🙂</option>
+                        <option>🤪</option>
+                        <option>😔</option>
+                        <option>🤬</option>
+                        <option>🙄</option>
+                        <option>😧</option>
+                        <option>🤭</option>
+                        <option>🤯</option>
+                        <option>😤</option>
+                        <option>😢</option>
+                        <option>😳</option>
+                        <option>🙄</option>
+                        <option>😬</option>
+                        <option>💩</option>
+                        <option>😍</option>
+                        <option>😒</option>
+                        <option>😭</option>
+                        <option>🤣</option>
+
+                        </select>
+
                         <span>What was the situation?</span>
                         <div class="textbox">
                         <textarea name="situation" value={this.state.situation} onChange={this.handleChange}/>

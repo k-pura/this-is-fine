@@ -8,7 +8,8 @@ export default class MyThoughts extends Component {
     thoughts: [],
   }  
   getThoughts = async () => {
-    let fetchThoughtDataResponse = await fetch('/api/thoughts/')
+    let jwt = localStorage.getItem('token')
+    let fetchThoughtDataResponse = await fetch('/api/thoughts/', {headers: {'Authorization': 'Bearer ' + jwt}})
     if (!fetchThoughtDataResponse.ok) throw new Error("Couldn't fetch thoughts!")
     let thoughtsData = await fetchThoughtDataResponse.json() // <------- convert fetch response into a js object
     console.log("get thoughts", thoughtsData)
@@ -27,14 +28,12 @@ export default class MyThoughts extends Component {
     return (
      <div className="my-thought">
         <h1>All of my thoughts</h1>
-        <div className="my-thoughts">
-    {this.state.thoughts.map(t => 
-      <div class="my-thought-container">
-          <div class="my-thought-content">
-      <Link to={`/thoughts/${t._id}`} activeClassName="current">{t.entryName}</Link>
-      </div>
-      </div>
-      
+
+    {this.state.thoughts.map(t => <h1>
+
+    <Link to={`/thoughts/${t._id}`} activeClassName="current">{t.entryName} <br/> {t.emoji}</Link>
+
+      </h1>
     )}
     </div>
     </div>

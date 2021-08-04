@@ -3,7 +3,8 @@ const Thought = require('../../models/Thought');
 module.exports = {
     create,
     index,
-    showOne
+    showOne,
+    deleteOne,
 }
 
 async function showOne(req,res) {
@@ -20,7 +21,7 @@ async function showOne(req,res) {
 async function index(req,res) {
   try {
     console.log("i'm an index try")
-    let thoughts = await Thought.find({})
+    let thoughts = await Thought.find({user: req.user._id})
     res.status(200).json(thoughts)
   } catch(err) {
     res.status(500).json(err)
@@ -36,4 +37,16 @@ async function create(req, res) {
       res.json(err);
     }
 }
+
+async function deleteOne(req, res) {
+    try {
+      let incomingId = req.params.id;
+      console.log("HERE IS THE INCOMING ID FROM THE REQ PARAMS", incomingId)
+      await Thought.findByIdAndRemove(incomingId)
+      console.log("YALL WE DID THE DELETE WE GOOD")
+      res.status(200).json('yes, deleted.')
+    } catch (err) {
+      res.status(500).json(err);
+    }
+} 
 

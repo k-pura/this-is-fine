@@ -3,13 +3,13 @@ import { Component } from 'react';
 import React from 'react';
 import AuthPage from '../AuthPage/AuthPage';
 import Nav from '../../components/Nav/Nav.jsx';
-import { Link, Route, Switch} from 'react-router-dom';
+import {Redirect, Route, Switch} from 'react-router-dom';
 import MyThoughts from '../../pages/MyThoughts/MyThoughts';
 import NewThought from '../../pages/NewThought/NewThought';
 import Resources from '../../pages/Resources/Resources';
 import ThoughtDetail from '../ThoughtDetail/ThoughtDetail';
 import About from '../About/About';
-import UserLogOut from '../../components/UserLogOut/UserLogOut';
+
 
 export default class App extends Component {
   state = {
@@ -21,6 +21,7 @@ export default class App extends Component {
     this.setState({ user: incomingUserData})
   }
 
+  
   // when the page refreshes, check localStorage for the user jwt token
   componentDidMount() {
     let token = localStorage.getItem('token')
@@ -41,13 +42,9 @@ export default class App extends Component {
       <div className="App">
         { this.state.user ? 
           <div>
-          <Nav />
-            Logged In
-          </div> :
-         <AuthPage setUserInState={this.setUserInState}/>
-        }  
-        <Switch>
-          <Route>
+          <Nav setUserInState={this.setUserInState}/>
+          <Redirect to="/about" />
+          <Switch>
             <Route path="/thoughts/:id" render={props =>
               <ThoughtDetail {...props}/>
             } />
@@ -63,11 +60,12 @@ export default class App extends Component {
             <Route path='/resources' render={props =>
               <Resources {...props}/>
             } />
-            <Route path='/logout' render={props =>
-              <UserLogOut {...props}/>
-            } />
-          </Route>
-      </Switch>
+          </Switch>
+          </div> :
+         <AuthPage setUserInState={this.setUserInState}/>
+        }  
+      </main>
+
       </div>
     )
   }

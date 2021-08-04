@@ -15,10 +15,6 @@ export default class Nav extends React.Component {
     user: null,
   };
 
-  setUserInState = (incomingUserData) => {
-    this.setState({ user: incomingUserData})
-  }
-
   handleLogOut = (e) => {
     e.preventDefault()
     console.log('logout clicked')
@@ -26,6 +22,7 @@ export default class Nav extends React.Component {
     token = null
     localStorage.removeItem('token')
     history.push('/');
+    this.props.setUserInState(null)
     this.setState({
       user: null,
       isLoggedIn: false,

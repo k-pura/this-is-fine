@@ -21,6 +21,7 @@ export default class App extends Component {
     this.setState({ user: incomingUserData})
   }
 
+  
   // when the page refreshes, check localStorage for the user jwt token
   componentDidMount() {
     let token = localStorage.getItem('token')
@@ -42,7 +43,7 @@ export default class App extends Component {
         <main>
         { this.state.user ? 
           <div>
-          <Nav />
+          <Nav setUserInState={this.setUserInState}/>
           <Redirect to="/about" />
           <Switch>
             <Route path="/thoughts/:id" render={props =>

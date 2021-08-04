@@ -28,7 +28,7 @@ export default class MyThoughts extends Component {
       <div className="myThoughts">
         <h1>All of my thoughts</h1>
     {this.state.thoughts.map(t => <h1>
-      <Link to={`/thoughts/${t._id}`} activeClassName="current">{t.entryName}</Link>
+      <Link to={`/thoughts/${t.user}`} activeClassName="current">{t.entryName}</Link>
       </h1>
     )}
        </div>

@@ -21,7 +21,7 @@ async function showOne(req,res) {
 async function index(req,res) {
   try {
     console.log("i'm an index try")
-    let thoughts = await Thought.find({})
+    let thoughts = await Thought.find({user: req.user._id})
     res.status(200).json(thoughts)
   } catch(err) {
     res.status(500).json(err)

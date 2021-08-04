@@ -7,7 +7,8 @@ export default class MyThoughts extends Component {
     thoughts: [],
   }  
   getThoughts = async () => {
-    let fetchThoughtDataResponse = await fetch('/api/thoughts/')
+    let jwt = localStorage.getItem('token')
+    let fetchThoughtDataResponse = await fetch('/api/thoughts/', {headers: {'Authorization': 'Bearer ' + jwt}})
     if (!fetchThoughtDataResponse.ok) throw new Error("Couldn't fetch thoughts!")
     let thoughtsData = await fetchThoughtDataResponse.json() // <------- convert fetch response into a js object
     console.log("get thoughts", thoughtsData)

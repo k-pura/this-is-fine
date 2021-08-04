@@ -2,7 +2,7 @@
 import React from 'react';
 import './UserLogOut.css'
 
-class UserLogOut extends React.Component {
+export default class UserLogOut extends React.Component {
   render() {
   return (
       <div className='UserLogOut'>
@@ -14,4 +14,3 @@ class UserLogOut extends React.Component {
   }
 }
 
-export default UserLogOut;

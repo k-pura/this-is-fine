@@ -30,13 +30,15 @@ async function index(req,res) {
 }
 
 async function create(req, res) {
-    try {
+   
       console.log(req.body)
-      await Thought.create(req.body)
+      let thought = new Thought(req.body)
+      thought.user = req.user._id
+      await thought.save()
       res.status(200).json('ok')
-    } catch(err) {
-      res.json(err);
-    }
+    // } catch(err) {
+    //   res.json(err);
+    // }
 }
 
 async function deleteOne(req, res) {

@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Londrina+Solid:wght@300&display=swap');
+
+.welcome {
+    font-family: Londrina Solid;
+}
 
 .account-form-container {
     text-align: center;

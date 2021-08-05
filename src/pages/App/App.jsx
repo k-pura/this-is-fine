@@ -46,7 +46,7 @@ export default class App extends Component {
         { this.state.user ? 
           <div>
           <Nav setUserInState={this.setUserInState}/>
-          <Redirect to="/about" />
+          {/* <Redirect to="/about" /> */}
           <Switch>
             <Route path="/thoughts/:id" render={props =>
               <ThoughtDetail {...props}/>
@@ -66,9 +66,11 @@ export default class App extends Component {
             <Route path='/mindlessness' render={props =>
               <Mindlessness {...props}/>
             } />  
-          }
+          
+          <Redirect to="/about" />
           </Switch>
-          </div> :
+          </div>
+            :
           <div>
           <LogInPic pic={comic} />
           <AuthPage setUserInState={this.setUserInState}/>

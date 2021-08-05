@@ -75,16 +75,19 @@ export default class NewThoughtRecordForm extends Component {
         return (
             <div class="thought">
                 <h1>New Thought Record</h1>
-                        <div class="thought-container">
-                            <div class="thought-contents">
+                    <div class="thought-container">
+                        <div class="thought-contents">
+
                     <form class="thought-form">
                         <span>Name this entry:</span>
                         <div class="textbox-title">
                         <textarea name="entryName" value={this.state.entryName} onChange={this.handleChange}/>
                         </div>
                         <br />
-
+                        <br />
+                        <br />
                         <span>What emoji resonantes with you right now?</span>
+                        <br />
                         <select name="emoji" value={this.state.emoji} onChange={this.handleChange}>
                         <option>🙂</option>
                         <option>🤪</option>
@@ -104,9 +107,9 @@ export default class NewThoughtRecordForm extends Component {
                         <option>😒</option>
                         <option>😭</option>
                         <option>🤣</option>
-
                         </select>
-
+                        <br />
+                        <br />
                         <span>What was the situation?</span>
                         <div class="textbox">
                         <textarea name="situation" value={this.state.situation} onChange={this.handleChange}/>
@@ -141,16 +144,14 @@ export default class NewThoughtRecordForm extends Component {
                         <div class="text">
                         <textarea name="feelNow" value={this.state.feelNow} onChange={this.handleChange}/>
                         </div>
-                        
                         <br />
                         <br />
-                        
                         <button onClick={this.handleSubmit}>Save this record</button>
-                   
                     </form>
-                    </div>
-                    </div>
-                    </div>
+                
+                </div>
+            </div>
+        </div>
     )
   }
 }

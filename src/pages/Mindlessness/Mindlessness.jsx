@@ -64,15 +64,18 @@ export default class Mindlessness extends React.Component {
             return(
             <div className="mindless">
                 
-
+                <br />
+                <br />
                 <button onClick={()=>this.updateJoke()}>Click here for a new dad joke!</button>
-
-                <p>joke: {this.state.joke}</p>
-
-
                 <button onClick={()=>this.updateYe()}>Rando-Yeez Quote</button>
-
-                <p>Let's take a moment to hear what Kayne West has to say: {this.state.quote}</p>
+                <br />
+                <br/>
+                
+                <p>
+                  {this.state.joke}
+                  <br />
+                  {this.state.quote}
+                  </p>
 
             </div>
             )

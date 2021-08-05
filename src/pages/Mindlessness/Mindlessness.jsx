@@ -12,7 +12,7 @@ export default class Mindlessness extends React.Component {
         try {
             console.log("i am inside the fetch")
             const response = await fetch("http://icanhazdadjoke.com", {
-                headers: {
+                headers: {  
                   Accept: "application/json",
                 },
               });

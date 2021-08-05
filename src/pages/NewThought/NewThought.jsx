@@ -1,5 +1,6 @@
 import { Component } from 'react';
-import './NewThought.css'
+import './NewThought.css';
+import history from "../../history";
 
 export default class NewThoughtRecordForm extends Component {
 
@@ -21,6 +22,8 @@ export default class NewThoughtRecordForm extends Component {
         });
     };
 
+    
+    
     handleSubmit = async () => {
         let body = {
             entryName: this.state.entryName,
@@ -41,7 +44,6 @@ export default class NewThoughtRecordForm extends Component {
         let jwt = localStorage.getItem('token')
 
         let options = {
-            
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -64,11 +66,9 @@ export default class NewThoughtRecordForm extends Component {
                     balanceThought: "",
                     feelNow: "",
                 })
+                // history.push('/mythoughts');
             })
-
-
-
-
+  
     }
 
     render () {
@@ -148,18 +148,9 @@ export default class NewThoughtRecordForm extends Component {
                         <button onClick={this.handleSubmit}>Save this record</button>
                    
                     </form>
-         </div>
-</div>
-                        </div>
-
-            
-
-
-        )
-
-
-
-    }
-
-
+                    </div>
+                    </div>
+                    </div>
+    )
+  }
 }

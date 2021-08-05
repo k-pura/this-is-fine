@@ -35,7 +35,6 @@ export default class MyThoughts extends Component {
     <Link to={`/thoughts/${t._id}`} activeClassName="current">{t.entryName} <br/> {t.emoji}</Link>
 </div>
       </div>
-      </h1>
     )}
     </div>
     </div>

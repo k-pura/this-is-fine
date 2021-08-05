@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Londrina+Solid:wght@300&display=swap');
+
 .Nav {
     background-color: #65524d;
     padding: 1em;
     position: relative;
     margin: 0 auto;
+    font-family: Londrina Solid;
 }
 
 .nav-container {
@@ -16,6 +19,9 @@
     cursor: pointer;
     border-bottom: 3px solid transparent;
     text-decoration: none;
+    color: white;
+    letter-spacing: 1.6px;
+    font-size: 1.4rem;
 }
 
 .link:hover {
@@ -27,4 +33,29 @@
     color: orange;
     transition: 0.5s;
     text-decoration: none;
+}
+
+.logout-button {
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+	background-color :#ffffff;
+	border-radius: 6px;
+	border: 1px solid #dcdcdc;
+	display: inline-block;
+	cursor: pointer;
+	color: black;
+	font-size: 11.5px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow:0px 1px 0px #ffffff;
+    font-family: Bebas Neue;
+}
+
+.logout-button:hover {
+    background-color:#f6f6f6;
+}
+
+.logout-button:active {
+    position:relative;
+	top:1px;
 }

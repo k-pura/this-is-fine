@@ -71,9 +71,8 @@ export default class NewThoughtRecordForm extends Component {
     render () {
         return (
             <div class="thought">
-                <h1>New Thought Record</h1>
+                <header class="thought-header">New Thought Record</header>
                     <div class="thought-container">
-                        <div class="thought-contents">
 
                     <form class="thought-form">
                         <span>Name this entry:</span>
@@ -143,12 +142,11 @@ export default class NewThoughtRecordForm extends Component {
                         </div>
                         <br />
                         <br />
-                        <button onClick={this.handleSubmit}>Save this record</button>
+                        <button class="thought-form-button" onClick={this.handleSubmit}>Save This Record</button>
                     </form>
                 
                 </div>
             </div>
-        </div>
     )
   }
 }

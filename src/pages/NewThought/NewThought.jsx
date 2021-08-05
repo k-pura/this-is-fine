@@ -24,7 +24,8 @@ export default class NewThoughtRecordForm extends Component {
 
     
     
-    handleSubmit = async () => {
+    handleSubmit = async (evt) => {
+        evt.preventDefault()
         let body = {
             entryName: this.state.entryName,
             emoji: this.state.emoji,
@@ -51,7 +52,6 @@ export default class NewThoughtRecordForm extends Component {
         await fetch ("/api/submitThoughtRecord", options)
             .then(res => res.json())
             .then(data => {
-                this.props.getThoughts(); //test this one out 
                 this.setState({
                     entryName: "",
                     emoji: "",
@@ -63,9 +63,8 @@ export default class NewThoughtRecordForm extends Component {
                     balanceThought: "",
                     feelNow: "",
                 })
-                // history.push('/mythoughts');
+            this.props.history.push("/mythoughts")    
             })
-  
     }
 
     render () {
@@ -74,17 +73,19 @@ export default class NewThoughtRecordForm extends Component {
                 <header class="thought-header">New Thought Record</header>
                     <div class="thought-container">
 
-                    <form class="thought-form">
+                    <form class="thought-form"
+                    onSubmit={this.handleSubmit}
+                    >
                         <span>Name this entry:</span>
                         <div class="textbox-title">
-                        <textarea name="entryName" value={this.state.entryName} onChange={this.handleChange}/>
+                        <textarea required name="entryName" value={this.state.entryName} onChange={this.handleChange}/>
                         </div>
                         <br />
                         <br />
                         <br />
                         <span>What emoji resonantes with you right now?</span>
                         <br />
-                        <select name="emoji" value={this.state.emoji} onChange={this.handleChange}>
+                        <select required name="emoji" value={this.state.emoji} onChange={this.handleChange}>
                         <option>🙂</option>
                         <option>🤪</option>
                         <option>😔</option>
@@ -142,7 +143,7 @@ export default class NewThoughtRecordForm extends Component {
                         </div>
                         <br />
                         <br />
-                        <button class="thought-form-button" onClick={this.handleSubmit}>Save This Record</button>
+                        <button class="thought-form-button">Save This Record</button>
                     </form>
                 
                 </div>

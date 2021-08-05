@@ -12,7 +12,7 @@ export default class AuthPage extends React.Component {
     return (
       <div className="AuthPage">        
         <div className="account-options">
-          <button onClick={() => this.setState({ showLogin: !this.state.showLogin })}>
+          <button id="loginSignup" onClick={() => this.setState({ showLogin: !this.state.showLogin })}>
             {this.state.showLogin ? 'SIGN UP' : 'LOG IN'}
           </button>
           

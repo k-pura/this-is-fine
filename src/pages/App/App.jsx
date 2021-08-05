@@ -63,7 +63,7 @@ export default class App extends Component {
             <Route path='/resources' render={props =>
               <Resources {...props}/>
             } />
-            <Route pathe='/mindlessness' render={props =>
+            <Route path='/mindlessness' render={props =>
               <Mindlessness {...props}/>
             } />  
           }

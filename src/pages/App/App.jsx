@@ -43,7 +43,6 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-      <main>
         { this.state.user ? 
           <div>
           <Nav setUserInState={this.setUserInState}/>
@@ -75,8 +74,6 @@ export default class App extends Component {
           <AuthPage setUserInState={this.setUserInState}/>
           </div>
         }  
-      </main>
-
       </div>
     )
   }

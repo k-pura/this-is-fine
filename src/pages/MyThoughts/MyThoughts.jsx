@@ -28,16 +28,17 @@ export default class MyThoughts extends Component {
     return (
      <div className="my-thought">
         <h1>All of my thoughts</h1>
-        <div className="my-thoughts">
-    {this.state.thoughts.map(t => 
-      <div class="my-thought-container">
-          <div class="my-thought-content">
-    <Link to={`/thoughts/${t._id}`} activeClassName="current">{t.entryName} <br/> {t.emoji}</Link>
-</div>
+          <div className="my-thoughts">
+              {this.state.thoughts.map(t => 
+              <div class="my-thought-container">
+              <div class="my-thought-content">
+              <Link to={`/thoughts/${t._id}`} activeClassName="current">{t.entryName} <br/> {t.emoji}</Link>
+         </div>
       </div>
-    )}
-    </div>
-    </div>
+      )}
+  </div>
+</div>
+    
     )
   }
 }

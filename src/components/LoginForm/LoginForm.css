@@ -1,0 +1,11 @@
+.form-container {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 30px;
+    overflow: auto;
+    border: solid 2px black;
+}
+
+.form-content {
+    margin-bottom: 40px;
+}

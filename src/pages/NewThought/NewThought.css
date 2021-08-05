@@ -19,14 +19,8 @@
 
 }
 
-.thought-contents {
-    align-items: center;
-    padding: 10px;
-
-}
-
-.entry-title {
-    justify-content: center;
+.thought-form > .textbox-title {
+    width: 200px;
 }
 
 textarea {
@@ -38,9 +32,5 @@ textarea {
 
 }
 
-.textbox {
-    justify-content: center;
-    height: auto;
 
-}
 

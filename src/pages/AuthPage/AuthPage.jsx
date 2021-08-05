@@ -10,9 +10,7 @@ export default class AuthPage extends React.Component {
 
   render() {
     return (
-      <main className="AuthPage">
-        <br />
-        <br />
+      <div className="AuthPage">
         {/* Another ternary operator! */}
         {/* If showLogin is true, show the login form. If false, show the signup form */}
         {this.state.showLogin ? 
@@ -23,7 +21,7 @@ export default class AuthPage extends React.Component {
             {this.state.showLogin ? 'SIGN UP' : 'LOG IN'}
           </button>
         </div>  
-      </main>
+      </div>
     );
   }
 }

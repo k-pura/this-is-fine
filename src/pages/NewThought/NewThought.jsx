@@ -70,21 +70,24 @@ export default class NewThoughtRecordForm extends Component {
 
     render () {
         return (
-            <div class="thought">
+            <div class="thought-container">
                 <header class="thought-header">New Thought Record</header>
-                    <div class="thought-container">
-
+                    <div class="thought-content">
+                        <div className="lines"></div>
+                   
                     <form class="thought-form">
-                        <span>Name this entry:</span>
-                        <div class="textbox-title">
-                        <textarea name="entryName" value={this.state.entryName} onChange={this.handleChange}/>
-                        </div>
+                        
+                        <li>Name this entry:</li>
+                        <li class="textbox-title">
+                        <textarea class="thought-info" name="entryName" value={this.state.entryName} onChange={this.handleChange}/>
+                        </li>
+
+                        <ul className="list">
+
+                        <li>What emoji resonantes with you right now?</li>
                         <br />
-                        <br />
-                        <br />
-                        <span>What emoji resonantes with you right now?</span>
-                        <br />
-                        <select name="emoji" value={this.state.emoji} onChange={this.handleChange}>
+                        <li>
+                        <select class="thought-info" name="emoji" value={this.state.emoji} onChange={this.handleChange}>
                         <option>🙂</option>
                         <option>🤪</option>
                         <option>😔</option>
@@ -104,45 +107,63 @@ export default class NewThoughtRecordForm extends Component {
                         <option>😭</option>
                         <option>🤣</option>
                         </select>
+                        </li>
+
                         <br />
                         <br />
-                        <span>What was the situation?</span>
-                        <div class="textbox">
-                        <textarea name="situation" value={this.state.situation} onChange={this.handleChange}/>
-                        </div>
+
+                        <li>What was the situation?</li>
+                        <li class="textbox">
+                        <textarea class="thought-info" name="situation" value={this.state.situation} onChange={this.handleChange}/>
+                        </li>
+
                         <br />
-                        <span>Describe your emotions or feelings:</span>
-                        <div class="textbox">
-                        <textarea name="emotion" value={this.state.emotion} onChange={this.handleChange} />
-                        </div>
+
+                        <li>Describe your emotions or feelings:</li>
+                        <li class="textbox">
+                        <textarea class="thought-info" name="emotion" value={this.state.emotion} onChange={this.handleChange} />
+                        </li>
+
                         <br />
-                        <span>Automatic thoughts:</span>
-                        <div class="textbox">
-                        <textarea name="automaticThoughts" value={this.state.automaticThoughts} onChange={this.handleChange}/>
-                        </div>
+
+                        <li>Automatic thoughts:</li>
+                        <li class="textbox">
+                        <textarea class="thought-info" name="automaticThoughts" value={this.state.automaticThoughts} onChange={this.handleChange}/>
+                        </li>
+
                         <br />
-                        <span>Evidence supporting those thoughts:</span>
-                        <div class="textbox">
-                        <textarea name="evidenceSupport" value={this.state.evidenceSupport} onChange={this.handleChange} />
-                        </div>
+
+                        <li>Evidence supporting those thoughts:</li>
+                        <li class="textbox">
+                        <textarea class="thought-info" name="evidenceSupport" value={this.state.evidenceSupport} onChange={this.handleChange} />
+                        </li>
+
                         <br />
-                        <span>Evidence against those thoughts:</span>
-                        <div class="textbox">
-                        <textarea name="evidenceAgainst" value={this.state.evidenceAgainst} onChange={this.handleChange} />
-                        </div>
+
+                        <li>Evidence against those thoughts:</li>
+                        <li class="textbox">
+                        <textarea class="thought-info" name="evidenceAgainst" value={this.state.evidenceAgainst} onChange={this.handleChange} />
+                        </li>
+
                         <br />
-                        <span>New balanced thought:</span>
-                        <div class="textbox">
-                        <textarea name="balanceThought" value={this.state.balanceThought} onChange={this.handleChange}/>
-                        </div>
+
+                        <li>New balanced thought:</li>
+                        <li class="textbox">
+                        <textarea class="thought-info" name="balanceThought" value={this.state.balanceThought} onChange={this.handleChange}/>
+                        </li>
+
                         <br />
-                        <span>How do you feel now?</span>
-                        <div class="text">
-                        <textarea name="feelNow" value={this.state.feelNow} onChange={this.handleChange}/>
-                        </div>
+
+                        <li>How do you feel now?</li>
+                        <li class="text">
+                        <textarea class="thought-info" name="feelNow" value={this.state.feelNow} onChange={this.handleChange}/>
+                        </li>
+
                         <br />
                         <br />
-                        <button class="thought-form-button" onClick={this.handleSubmit}>Save This Record</button>
+
+                        <button class="thought-save-form-button" onClick={this.handleSubmit}>Save This Record</button>
+                        </ul>
                     </form>
                 
                 </div>

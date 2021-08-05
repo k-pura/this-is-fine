@@ -57,54 +57,70 @@ export default class ThoughtDetail extends Component {
       <div className="thought-detail-container">
         <h1 className="thought-detail-header">Thought Detail</h1>
           <div className="thought-detail-content">
-          &nbsp;
-          <br />
-          <br />
+             &nbsp;
+              <br />
+              <br />
           <div className="thought-detail-contents">
-            <p>Entry Name:</p>       
-            <div className="thought-info">{this.state.oneThought.entryName}</div>
-            <br />
-            <br />
-            <p>What emoji resonantes with you right now?</p>
-            <div className="thought-info">{this.state.oneThought.emoji}</div>
-            <br />
-            <br />
-            <p>What was the situation?</p>
-            <div className="thought-info">{this.state.oneThought.situation}</div>
-            <br />
-            <br />
-            <p>Describe your emotions or feelings:</p>
-            <div className="thought-info">{this.state.oneThought.emotion}</div>
-            <br />
-            <br />
-            <p>Automatic thoughts:</p>
-            <div className="thought-info">{this.state.oneThought.automaticThoughts}</div>
-            <br />
-            <br />
-            <p>Evidence supporting those thoughts:</p>
-            <div className="thought-info">{this.state.oneThought.evidenceSupport}</div>
-            <br />
-            <br />
-            <p>Evidence against those thoughts:</p>
-            <div className="thought-info">{this.state.oneThought.evidenceAgainst}</div>
-            <br />
-            <br />
-            <p>New balanced thought:</p>
-            <div className="thought-info">{this.state.oneThought.balanceThought}</div>
-            <br />
-            <br />
-            <p>How do you feel now?</p>
-            <div className="thought-info">{this.state.oneThought.feelNow}</div>
-            <br/>
-            <br/>   
-            <br/>    
-            <div className="delete-button">
-            <button onClick={this.handleDelete}>Delete this thought record</button>
-            </div>  
+            <div class="lines"></div>
+              <li className="thought-detail-entry-info">{this.state.oneThought.entryName}</li>
+              <ul className="list">
+
+              <br />
+              <br />
+
+              <li>What emoji resonantes with you right now?</li>
+              <li className="thought-info">{this.state.oneThought.emoji}</li>
+
+              <br />
+              <br />
+
+              <li>What was the situation?</li>
+              <li className="thought-info">{this.state.oneThought.situation}</li>
+
+              <br />
+              <br />
+
+              <li>Describe your emotions or feelings:</li>
+              <li className="thought-info">{this.state.oneThought.emotion}</li>
+
+              <br />
+              <br />
+
+              <li>Automatic thoughts:</li>
+              <li className="thought-info">{this.state.oneThought.automaticThoughts}</li>
+
+              <br />
+              <br />
+
+              <li>Evidence supporting those thoughts:</li>
+              <li className="thought-info">{this.state.oneThought.evidenceSupport}</li>
+
+              <br />
+              <br />
+
+              <li>Evidence against those thoughts:</li>
+              <li className="thought-info">{this.state.oneThought.evidenceAgainst}</li>
+
+              <br />
+              <br />
+
+              <li>New balanced thought:</li>
+              <li className="thought-info">{this.state.oneThought.balanceThought}</li>
+
+              <br />
+              <br />
+
+              <li>How do you feel now?</li>
+              <li className="thought-info">{this.state.oneThought.feelNow}</li>
+
+              </ul>
             </div>
-        
-            </div>
-      </div>
+          </div>
+              <div className="thought-detail-delete-button">
+              <button className="delete-button" onClick={this.handleDelete}>Delete this thought record</button>
+              </div>
+            <br />
+        </div>
     )
   }
 }

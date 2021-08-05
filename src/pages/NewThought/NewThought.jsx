@@ -38,11 +38,6 @@ export default class NewThoughtRecordForm extends Component {
             user: this.props.user._id,
         }
 
-        if(body.entryName ==="" & body.emoji ==="")  {
-            this.setState({err: "Fill this out!"})
-            return "Please fill out entry name and emoji"
-        }; 
-      
         let jwt = localStorage.getItem('token')
 
         let options = {

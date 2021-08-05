@@ -54,15 +54,15 @@ export default class Nav extends React.Component {
         {this.state.user ? 
         <nav className="Nav">
           <div className="nav-container">
-            <Link class="link" exact to='/about'>ABOUT</Link>
+            <Link class="link" exact to='/about'>about</Link>
             &nbsp;&nbsp;&nbsp;
-            <Link class="link" exact to='/mythoughts'>MY THOUGHTS</Link>
+            <Link class="link" exact to='/mythoughts'>my thoughts</Link>
             &nbsp;&nbsp;&nbsp;
-            <Link class="link" exact to='/newthought'>NEW THOUGHT</Link>
+            <Link class="link" exact to='/newthought'>new thought</Link>
             &nbsp;&nbsp;&nbsp;
-            <Link class="link" exact to='/resources'>RESOURCES</Link>
+            <Link class="link" exact to='/resources'>rescources</Link>
             &nbsp;&nbsp;&nbsp;
-            <Link class="link" exact to='/mindlessness'>MINDLESSNESS</Link>
+            <Link class="link" exact to='/mindlessness'>mindlessness</Link>
             &nbsp;&nbsp;&nbsp;
             <Link class="link" exact to='/'>
             <UserLogOut

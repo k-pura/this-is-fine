@@ -32,7 +32,7 @@ export default class MyThoughts extends Component {
               {this.state.thoughts.map(t => 
               <div class="my-thought-container">
               <div class="my-thought-content">
-              <Link to={`/thoughts/${t._id}`} activeClassName="current">{t.entryName} <br/> {t.emoji}</Link>
+              <Link class="my-thought-link" to={`/thoughts/${t._id}`} activeClassName="current">{t.entryName} <br/> {t.emoji}</Link>
          </div>
       </div>
       )}

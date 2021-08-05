@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './NewThought.css';
-import history from "../../history";
+// import history from "../../history";
 
 export default class NewThoughtRecordForm extends Component {
 
@@ -37,9 +37,6 @@ export default class NewThoughtRecordForm extends Component {
             feelNow: this.state.feelNow,
             user: this.props.user._id,
         }
-
-// I need to define this jwt inside the options somehow so that I can put line 44 to work
-// i need to do this to protect a users entries to themselves only
 
         let jwt = localStorage.getItem('token')
 

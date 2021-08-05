@@ -62,6 +62,8 @@ export default class Nav extends React.Component {
             &nbsp;&nbsp;&nbsp;
             <Link exact to='/resources'>RESOURCES</Link>
             &nbsp;&nbsp;&nbsp;
+            <Link exact to='/mindlessness'>MINDLESSNESS</Link>
+            &nbsp;&nbsp;&nbsp;
             <Link exact to='/'>
             <UserLogOut
               handleLogOut={this.handleLogOut}

@@ -9,7 +9,10 @@ import NewThought from '../../pages/NewThought/NewThought';
 import Resources from '../../pages/Resources/Resources';
 import ThoughtDetail from '../ThoughtDetail/ThoughtDetail';
 import About from '../About/About';
+import Mindlessness from '../Mindlessness/Mindlessness';
+import LogInPic from '../../components/LoginInPic/LogInPic';
 
+import comic from '../../images/thisIsFineComic.jpg';
 
 export default class App extends Component {
   state = {
@@ -61,9 +64,16 @@ export default class App extends Component {
             <Route path='/resources' render={props =>
               <Resources {...props}/>
             } />
+            <Route pathe='/mindlessness' render={props =>
+              <Mindlessness {...props}/>
+            } />  
+          }
           </Switch>
           </div> :
-         <AuthPage setUserInState={this.setUserInState}/>
+          <div>
+          <LogInPic pic={comic} />
+          <AuthPage setUserInState={this.setUserInState}/>
+          </div>
         }  
       </main>
 
